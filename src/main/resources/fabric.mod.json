@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "kultsmiscmod",
+  "version": "${version}",
+  "name": "KultsMiscMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/kultsmiscmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.kultist.kultsmiscmod.KultsmiscmodDataGenerator"
+    ],
+    "client": [
+      "org.kultist.kultsmiscmod.client.KultsmiscmodClient"
+    ],
+    "main": [
+      "org.kultist.kultsmiscmod.KultsMiscMod"
+    ]
+  },
+  "mixins": [
+    "kultsmiscmod.mixins.json",
+    {
+      "config": "kultsmiscmod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
